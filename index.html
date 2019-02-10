@@ -164,11 +164,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                7
+                8
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                11
+                12
                 <span>标签</span>
             </div>
         </div>
@@ -217,6 +217,173 @@
 
             
             <section id="main">
+    <article id="post-jquery常用干活" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2018/11/07/jquery常用干活/">WebpackReact</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/11/07/jquery常用干活/">
+            <time datetime="2018-11-07T03:56:22.000Z" itemprop="datePublished">2018-11-07</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Jquery/">Jquery</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="时区转换"><a href="#时区转换" class="headerlink" title="时区转换"></a>时区转换</h1><h4 id="基本每个项目都会有，经常还会成为-BUG-存在，我写一个时间问题没有写时区的处理，被领导认为我技术菜，受教育了，所以加深一波影响"><a href="#基本每个项目都会有，经常还会成为-BUG-存在，我写一个时间问题没有写时区的处理，被领导认为我技术菜，受教育了，所以加深一波影响" class="headerlink" title="(基本每个项目都会有，经常还会成为 BUG 存在，我写一个时间问题没有写时区的处理，被领导认为我技术菜，受教育了，所以加深一波影响)"></a>(基本每个项目都会有，经常还会成为 BUG 存在，我写一个时间问题没有写时区的处理，被领导认为我技术菜，受教育了，所以加深一波影响)</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">(_offset)=&gt;&#123;</span><br><span class="line">      var _offset = (new Date().getTimezoneOffset() / 60) + 8; //时区差</span><br><span class="line">			var offset = _offset * 3600 * 1000;</span><br><span class="line">			if (_offset &gt; 0) &#123;</span><br><span class="line">				offset = -offset;</span><br><span class="line">			&#125; else &#123;</span><br><span class="line">				offset = Math.abs(offset);</span><br><span class="line">			&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h1><h4 id="后端大佬让写一个“工具”，我一脸懵逼，发呆了很久不知如何下手，不是因为功能，而是不理解工具，我是有多弱智，我就问了下…"><a href="#后端大佬让写一个“工具”，我一脸懵逼，发呆了很久不知如何下手，不是因为功能，而是不理解工具，我是有多弱智，我就问了下…" class="headerlink" title="(后端大佬让写一个“工具”，我一脸懵逼，发呆了很久不知如何下手，不是因为功能，而是不理解工具，我是有多弱智，我就问了下….)"></a>(后端大佬让写一个“工具”，我一脸懵逼，发呆了很久不知如何下手，不是因为功能，而是不理解工具，我是有多弱智，我就问了下….)</h4><h4 id="什么是-具有独立样式和功能的小组件"><a href="#什么是-具有独立样式和功能的小组件" class="headerlink" title="什么是: 具有独立样式和功能的小组件"></a>什么是: 具有独立样式和功能的小组件</h4><h4 id="何时-重用功能"><a href="#何时-重用功能" class="headerlink" title="何时: 重用功能"></a>何时: 重用功能</h4><h4 id="包括"><a href="#包括" class="headerlink" title="包括:"></a>包括:</h4><pre><code>1. 官方: jQuery UI
+  下载: jquery ui
+  引入: link  css/jquery-ui.css
+        script js/jquery-1.11.3.js
+        script js/jquery-ui.js
+        按插件规定，定义HTML内容: 
+  调用插件函数: 
+
+  原理: 侵入: 插件自动根据需要，为元素添加属性和行为
+    优: 使用简单！
+    缺: 极其不便于维护！
+</code></pre><p>   插件 vs bootStroop:<br>    原理: DIY<br>     缺: 麻烦！<br>     优: 便于维护！</p>
+<pre><code>如何选择: 
+  1. 尽在自己的项目内，小范围使用: 采用jQueryUI方式
+  2. 如果是开放的插件，采用boot DIY的方式
+</code></pre><h4 id="2-自定义插件"><a href="#2-自定义插件" class="headerlink" title="2. 自定义插件:"></a>2. 自定义插件:</h4><pre><code>前提: 已经成功实现了该插件的样式和行为
+  1. jQuery UI 侵入: 
+  如何定义: 
+    1. 整理,并提取CSS到一个独立的css文件中
+    强调: 避免插件/组件间样式冲突
+      为整个组件定义一个顶级样式类的名字
+      组件内所有选择器必须以顶级样式类开头
+    2. 在独立的js文件中，为jQuery类型扩展新的插件函数: 
+    2件事: 
+      1. 自动侵入class和自定义扩展属性
+      2. 绑定事件
+  如何使用: 
+    1. 在HTML页面中引入css文件
+    2. 按插件要求，编写HTML内容
+    3. 引入jquery.js, 和插件.js文件
+    4. 调用插件函数
+
+  2. BootStroop DIY: 
+  如何定义:
+    1. 整理并提取css到独立css文件，同jQueryUI
+    2. 定义独立的js文件:
+      1件事: 查找元素，并绑定事件
+  如何使用:
+    1. 引入css
+    2. 按插件要求编写HTML内容
+      但，需要按插件要求手动添加class和data-*扩展属性
+    3. 引入jquery和插件.js
+</code></pre>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://niuhonggui.github.io/2018/11/07/jquery常用干活/" data-id="cjryqoeg60008jgueuevkiqnc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
     <article id="post-设计模式" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
@@ -266,7 +433,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/10/02/设计模式/" data-id="cjrypy528000dm4uekpt63z00" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/10/02/设计模式/" data-id="cjryqoegf000fjguef20sytbw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -402,7 +569,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/09/27/falseData/" data-id="cjrypy51s0003m4ue793ubf7j" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/09/27/falseData/" data-id="cjryqoefx0003jgueun4chilf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -532,7 +699,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/08/11/原理图/" data-id="cjrypy51x0006m4ue2vwzd1qy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/08/11/原理图/" data-id="cjryqoega000ajgue0d3cs6xt" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -680,7 +847,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjrypy5220008m4ueuafqupew" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjryqoeg20006jguekv2aj1zh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -812,7 +979,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/06/20/WebpackReact/" data-id="cjrypy51n0001m4uewkelq71w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/06/20/WebpackReact/" data-id="cjryqoefs0001jguew910c9nh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1034,7 +1201,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjrypy527000cm4uezeig6ecs" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjryqoegb000cjguesvz96s35" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1159,7 +1326,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/04/09/置顶/" data-id="cjrypy525000am4ueqnk2hj4o" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/04/09/置顶/" data-id="cjryqoege000djgueixdpclg6" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1248,6 +1415,25 @@
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2018/11/07/jquery常用干活/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/07/jquery常用干活/" class="title">WebpackReact</a></p>
+                            <p class="item-date"><time datetime="2018-11-07T03:56:22.000Z" itemprop="datePublished">2018-11-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2018/10/02/设计模式/" class="thumbnail">
     
     
@@ -1321,25 +1507,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/06/20/WebpackReact/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/06/20/WebpackReact/" class="title">WebpackReact</a></p>
-                            <p class="item-date"><time datetime="2018-06-20T03:56:22.000Z" itemprop="datePublished">2018-06-20</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1351,7 +1518,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1360,7 +1527,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">-photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">-photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1369,7 +1536,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/photo/" style="font-size: 10px;">-photo</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 20px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a>
+            <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/photo/" style="font-size: 10px;">-photo</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 20px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a>
         </div>
     </div>
 
