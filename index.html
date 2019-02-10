@@ -168,7 +168,7 @@
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                8
+                9
                 <span>标签</span>
             </div>
         </div>
@@ -244,7 +244,7 @@
                         
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/firebaseio/">firebaseio</a>
+        <a class="tag-link" href="/tags/firebaseio/">firebaseio</a>, <a class="tag-link" href="/tags/jsonServer/">jsonServer</a>
     </div>
 
                     </div>
@@ -255,10 +255,19 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="写本文的原因："><a href="#写本文的原因：" class="headerlink" title="写本文的原因："></a>写本文的原因：</h1><p>技术人员都很Lzay，都是拖着工期在走,不要想着后端提前给你接口去测试一些简单的数据，所以我就自己去一些假数据来测试最基本的一些可能会出现的问题。<br>自己写接口我一般是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，所有无限套用，改路由配置就完了。<br>但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！</p>
-<h2 id="1-http-jsonplaceholder-typicode-com"><a href="#1-http-jsonplaceholder-typicode-com" class="headerlink" title="1.http://jsonplaceholder.typicode.com"></a>1.<a href="http://jsonplaceholder.typicode.com" target="_blank" rel="noopener">http://jsonplaceholder.typicode.com</a></h2><p>这个是最基本的测试用数据测试网站</p>
-<h2 id="2-国内野狗：https-www-wilddog-com"><a href="#2-国内野狗：https-www-wilddog-com" class="headerlink" title="2.国内野狗：https://www.wilddog.com/"></a>2.国内野狗：<a href="https://www.wilddog.com/" target="_blank" rel="noopener">https://www.wilddog.com/</a></h2><h4 id="2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，试试看看现在能用吗？"><a href="#2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，试试看看现在能用吗？" class="headerlink" title="2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，试试看看现在能用吗？"></a>2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，试试看看现在能用吗？</h4><h2 id="3-https-www-firebaseio-com"><a href="#3-https-www-firebaseio-com" class="headerlink" title="3.https:www.firebaseio.com"></a>3.https:<a href="http://www.firebaseio.com" target="_blank" rel="noopener">www.firebaseio.com</a></h2><p>谷歌邮箱登陆</p>
-<h2 id="4-jsonServer"><a href="#4-jsonServer" class="headerlink" title="4.jsonServer"></a>4.jsonServer</h2><p>安装使用步骤 <a href="https://blog.csdn.net/jitlp_csdn/article/details/79923355" target="_blank" rel="noopener">https://blog.csdn.net/jitlp_csdn/article/details/79923355</a></p>
+            <h1 id="写本文的原因："><a href="#写本文的原因：" class="headerlink" title="写本文的原因："></a>写本文的原因：</h1><p>技术人员都很Lzay,大多数情况自己去做一些假数据来测试最基本一些功能的完整性。<br>我写接口是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，之后无限套用，改路由配置就完了。<br>但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！(第三)</p>
+<h2 id="1-jsonplaceholder"><a href="#1-jsonplaceholder" class="headerlink" title="1. jsonplaceholder"></a>1. <a href="http://jsonplaceholder.typicode.com" target="_blank" rel="noopener">jsonplaceholder</a></h2><p>这个是最简单的测试用数据测试网站<br>用户列表<a href="http://jsonplaceholder.typicode.com/users" target="_blank" rel="noopener">http://jsonplaceholder.typicode.com/users</a><br>get请求<a href="http://jsonplaceholder.typicode.com/posts" target="_blank" rel="noopener">http://jsonplaceholder.typicode.com/posts</a><br><img src="/2018/07/29/falseData/1.png" alt="示例图"></p>
+<h2 id="2-jsonServer"><a href="#2-jsonServer" class="headerlink" title="2.jsonServer"></a>2.jsonServer</h2><p>###安装使用步骤: </p>
+<h4 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h4><p>输入npm install -g json-server 安装json-server全局</p>
+<h4 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h4><p>输入npm init 初始化一个package.json文件</p>
+<h4 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h4><p>输入npm install json-server –save 安装一个json-server模块</p>
+<h4 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h4><p>修改一下package.json的启动方式，方便启动</p>
+<h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><p>创建一个db.json,编写一些假数据(对象数组方式)<br><img src="/2018/07/29/falseData/2.png" alt="示例图"></p>
+<h4 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h4><p>新建一个READNME.md文件，方便用户使用</p>
+<h4 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h4><p>终端输入 npm run json:server 启动json:server<br>打开浏览器，输入项目启动的地址(localhost:3000)<br>前端请求<a href="http://localhost:3000/xxxx数据就好" target="_blank" rel="noopener">http://localhost:3000/xxxx数据就好</a></p>
+<h4 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h4><p>下载POSTman来演示几个常用的请求(#get请求,#post请求)</p>
+<h2 id="2-firebaseio-https-www-firebaseio-com-谷歌邮箱登陆"><a href="#2-firebaseio-https-www-firebaseio-com-谷歌邮箱登陆" class="headerlink" title="2.firebaseio https:www.firebaseio.com(谷歌邮箱登陆)"></a>2.firebaseio https:<a href="http://www.firebaseio.com(谷歌邮箱登陆)" target="_blank" rel="noopener">www.firebaseio.com(谷歌邮箱登陆)</a></h2><p>谷歌邮箱登陆(我比较喜欢用这个傻瓜式注册，自己直接写数据，以后自己不通过GitHub搭博客自己纯手工开发我就用它，免费好用，有兴趣可以玩)<br>试试看看现在能用吗？因为我内网穿透所以可以用。</p>
+<h2 id="4-国内野狗：https-www-wilddog-com"><a href="#4-国内野狗：https-www-wilddog-com" class="headerlink" title="4.国内野狗：https://www.wilddog.com/"></a>4.国内野狗：<a href="https://www.wilddog.com/" target="_blank" rel="noopener">https://www.wilddog.com/</a></h2><h4 id="2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，"><a href="#2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，" class="headerlink" title="2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，"></a>2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，</h4><p>试试看看现在能用吗？截至到我发表这篇文章为止我还不能重新注册新的账户。类似于国外firebaseio，都很好用。</p>
 
         
         </div>
@@ -269,7 +278,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/07/29/falseData/" data-id="cjrydarao0001ksuemgcmkntn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/07/29/falseData/" data-id="cjryjpd3h00032kuet84t1vqn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -417,7 +426,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjrydaraz0006ksues3qlmqky" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjryjpd3m00062kueevh2a96h" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -549,7 +558,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/06/25/WebpackReact/" data-id="cjrydarat0003ksue8om9cut3" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/06/25/WebpackReact/" data-id="cjryjpd3c00012kue6rsjgaj8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -771,7 +780,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjrydarb40008ksuei7lt636w" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjryjpd3t00092kuehzgag74d" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -896,7 +905,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/04/09/置顶/" data-id="cjrydarb70009ksueo967o1q7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/04/09/置顶/" data-id="cjryjpd3q00082kue4je6cvfk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1097,7 +1106,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1106,7 +1115,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
+            <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 10px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a>
         </div>
     </div>
 
