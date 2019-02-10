@@ -3,19 +3,23 @@
 <head>
     <meta charset="utf-8">
     
-    <title>归档: 2018/4 | BLOG</title>
+    <title>模拟假数据 | BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="描写">
-<meta name="keywords" content="js，web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BLOG">
-<meta property="og:url" content="http://niuhonggui.github.io/archives/2018/04/index.html">
+    <meta name="description" content="写本文的原因：技术人员都很Lzay,大多数情况自己去做一些假数据来测试最基本一些功能的完整性。我写接口是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，之后无限套用，改路由配置就完了。但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！(第三) 1. jsonplaceh">
+<meta name="keywords" content="firebaseio,jsonServer">
+<meta property="og:type" content="article">
+<meta property="og:title" content="模拟假数据">
+<meta property="og:url" content="http://niuhonggui.github.io/2018/09/27/falseData/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="描写">
+<meta property="og:description" content="写本文的原因：技术人员都很Lzay,大多数情况自己去做一些假数据来测试最基本一些功能的完整性。我写接口是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，之后无限套用，改路由配置就完了。但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！(第三) 1. jsonplaceh">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://niuhonggui.github.io/2018/09/27/falseData/1.png">
+<meta property="og:image" content="http://niuhonggui.github.io/2018/09/27/falseData/2.png">
+<meta property="og:updated_time" content="2019-02-10T07:15:02.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BLOG">
-<meta name="twitter:description" content="描写">
+<meta name="twitter:title" content="模拟假数据">
+<meta name="twitter:description" content="写本文的原因：技术人员都很Lzay,大多数情况自己去做一些假数据来测试最基本一些功能的完整性。我写接口是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，之后无限套用，改路由配置就完了。但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！(第三) 1. jsonplaceh">
+<meta name="twitter:image" content="http://niuhonggui.github.io/2018/09/27/falseData/1.png">
     
 
     
@@ -216,45 +220,157 @@
 </aside>
 
             
-            <section id="main"><div class="timeline timeline-wrap">
-    
-            <div class="timeline-row timeline-row-major">
-                <span class="node"><i class="fa fa-calendar"></i></span>
-                <h1 class="title">2018</h1>
-            </div>
+            <section id="main"><article id="post-falseData" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
         
-        <div class="timeline-row">
-            <span class="node"></span>
-            <div class="content">
+        
+            <header class="article-header">
                 
     
-        <h1 itemprop="name">
-            <a class="timeline-article-title" href="/2018/04/09/置顶/">置顶</a>
+        <h1 class="article-title" itemprop="name">
+            模拟假数据
         </h1>
     
 
-                <div class="article-meta">
-                    
+                
+                    <div class="article-meta">
+                        
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/置顶/">
-            <time datetime="2018-04-09T14:56:02.000Z" itemprop="datePublished">2018-04-09</time>
+        <a href="/2018/09/27/falseData/">
+            <time datetime="2018-09-27T04:56:22.000Z" itemprop="datePublished">2018-09-27</time>
         </a>
     </div>
 
 
-                    
-                    
+                        
+                        
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/diary/">-diary</a>
+        <a class="tag-link" href="/tags/firebaseio/">firebaseio</a>, <a class="tag-link" href="/tags/jsonServer/">jsonServer</a>
     </div>
 
-                </div>
-            </div>
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="写本文的原因："><a href="#写本文的原因：" class="headerlink" title="写本文的原因："></a>写本文的原因：</h1><p>技术人员都很Lzay,大多数情况自己去做一些假数据来测试最基本一些功能的完整性。<br>我写接口是用node.js+express框架+mysql/mongoDB数据库搭建的后端来测试，基本是写出来一个demo，之后无限套用，改路由配置就完了。<br>但是在最近我重新温习vue的过程中我发现一些好玩的东西：假数据！假数据！假数据！免费的的假数据库！可以测试线上的！(第三)</p>
+<h2 id="1-jsonplaceholder"><a href="#1-jsonplaceholder" class="headerlink" title="1. jsonplaceholder"></a>1. <a href="http://jsonplaceholder.typicode.com" target="_blank" rel="noopener">jsonplaceholder</a></h2><p>这个是最简单的测试用数据测试网站<br>用户列表<a href="http://jsonplaceholder.typicode.com/users" target="_blank" rel="noopener">http://jsonplaceholder.typicode.com/users</a><br>get请求<a href="http://jsonplaceholder.typicode.com/posts" target="_blank" rel="noopener">http://jsonplaceholder.typicode.com/posts</a><br><img src="/2018/09/27/falseData/1.png" alt="示例图"></p>
+<h2 id="2-jsonServer"><a href="#2-jsonServer" class="headerlink" title="2.jsonServer"></a>2.jsonServer</h2><h3 id="安装使用步骤"><a href="#安装使用步骤" class="headerlink" title="安装使用步骤:"></a>安装使用步骤:</h3><h4 id="2-1"><a href="#2-1" class="headerlink" title="2.1"></a>2.1</h4><p>输入npm install -g json-server 安装json-server全局</p>
+<h4 id="3-2"><a href="#3-2" class="headerlink" title="3.2"></a>3.2</h4><p>输入npm init 初始化一个package.json文件</p>
+<h4 id="3-3"><a href="#3-3" class="headerlink" title="3.3"></a>3.3</h4><p>输入npm install json-server –save 安装一个json-server模块</p>
+<h4 id="3-4"><a href="#3-4" class="headerlink" title="3.4"></a>3.4</h4><p>修改一下package.json的启动方式，方便启动</p>
+<h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><p>创建一个db.json,编写一些假数据(对象数组方式)<br><img src="/2018/09/27/falseData/2.png" alt="示例图"></p>
+<h4 id="3-6"><a href="#3-6" class="headerlink" title="3.6"></a>3.6</h4><p>新建一个READNME.md文件，方便用户使用</p>
+<h4 id="3-7"><a href="#3-7" class="headerlink" title="3.7"></a>3.7</h4><p>终端输入 npm run json:server 启动json:server<br>打开浏览器，输入项目启动的地址(localhost:3000)<br>前端请求<a href="http://localhost:3000/xxxx数据就好" target="_blank" rel="noopener">http://localhost:3000/xxxx数据就好</a></p>
+<h4 id="3-8"><a href="#3-8" class="headerlink" title="3.8"></a>3.8</h4><p>下载POSTman来演示几个常用的请求(#get请求,#post请求)</p>
+<h2 id="2-firebaseio-https-www-firebaseio-com-谷歌邮箱登陆"><a href="#2-firebaseio-https-www-firebaseio-com-谷歌邮箱登陆" class="headerlink" title="2.firebaseio https:www.firebaseio.com(谷歌邮箱登陆)"></a>2.<a href="https:www.firebaseio.com" target="_blank" rel="noopener">firebaseio</a> https:<a href="http://www.firebaseio.com(谷歌邮箱登陆)" target="_blank" rel="noopener">www.firebaseio.com(谷歌邮箱登陆)</a></h2><p>谷歌邮箱登陆(我比较喜欢用这个傻瓜式注册，自己直接写数据，以后自己不通过GitHub搭博客自己纯手工开发我就用它，免费好用，有兴趣可以玩)<br>试试看看现在能用吗？因为我内网穿透所以可以用。</p>
+<h2 id="4-国内野狗：www-wilddog-com"><a href="#4-国内野狗：www-wilddog-com" class="headerlink" title="4.国内野狗：www.wilddog.com"></a>4.<a href="https://www.wilddog.com" target="_blank" rel="noopener">国内野狗</a>：<a href="http://www.wilddog.com" target="_blank" rel="noopener">www.wilddog.com</a></h2><h4 id="2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，"><a href="#2018-03-16-“野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，" class="headerlink" title="2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，"></a>2018-03-16 “野狗”创始人兼CEO刘之对外宣布，公司资金出现问题，重组计划推进缓慢，所以，即将停止新用户注册，服务将持续运营，直至老用户完全迁出，</h4><p>试试看看现在能用吗？截至到我发表这篇文章为止我还不能重新注册新的账户。类似于国外firebaseio，都很好用。</p>
+
+        
         </div>
-    
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
 </div>
+
+    <a data-url="http://niuhonggui.github.io/2018/09/27/falseData/" data-id="cjryl7dhu0004ooueootg0iac" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/08/11/原理图/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">原理图</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
 </section>
             
                 
