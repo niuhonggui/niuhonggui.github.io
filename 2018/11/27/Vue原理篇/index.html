@@ -3,20 +3,22 @@
 <head>
     <meta charset="utf-8">
     
-    <title>相册 | BLOG</title>
+    <title>Vue原理篇 | BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="这个人很懒，相册 什么都没留下">
-<meta name="keywords" content="js，web">
-<meta property="og:type" content="website">
-<meta property="og:title" content="相册">
-<meta property="og:url" content="http://niuhonggui.github.io/相册/index.html">
+    <meta name="description" content="MVVM 设计模式:网页组成:HTML 内容CSS 样式JS 交互行为问题: JS 的功能过于集中: 即要操作数据，又要操作界面！扩展，易读维护成本高 重新划分:View 视图 指网页中的元素和样式 HTML/CSSModel 模型 指程序中创建的或从远程获取的数据ViewModel 视图模型/控制器封装之前的 DOM/JQUERY 操作, 把模型数据绑定到视图中指定位置绑定: 不需要写一行代码，">
+<meta name="keywords" content="-Vue.js -设计模式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue原理篇">
+<meta property="og:url" content="http://niuhonggui.github.io/2018/11/27/Vue原理篇/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="这个人很懒，相册 什么都没留下">
+<meta property="og:description" content="MVVM 设计模式:网页组成:HTML 内容CSS 样式JS 交互行为问题: JS 的功能过于集中: 即要操作数据，又要操作界面！扩展，易读维护成本高 重新划分:View 视图 指网页中的元素和样式 HTML/CSSModel 模型 指程序中创建的或从远程获取的数据ViewModel 视图模型/控制器封装之前的 DOM/JQUERY 操作, 把模型数据绑定到视图中指定位置绑定: 不需要写一行代码，">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-02-10T07:37:12.223Z">
+<meta property="og:image" content="http://niuhonggui.github.io/2018/11/27/Vue原理篇/1.png">
+<meta property="og:updated_time" content="2019-02-11T02:19:46.279Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="相册">
-<meta name="twitter:description" content="这个人很懒，相册 什么都没留下">
+<meta name="twitter:title" content="Vue原理篇">
+<meta name="twitter:description" content="MVVM 设计模式:网页组成:HTML 内容CSS 样式JS 交互行为问题: JS 的功能过于集中: 即要操作数据，又要操作界面！扩展，易读维护成本高 重新划分:View 视图 指网页中的元素和样式 HTML/CSSModel 模型 指程序中创建的或从远程获取的数据ViewModel 视图模型/控制器封装之前的 DOM/JQUERY 操作, 把模型数据绑定到视图中指定位置绑定: 不需要写一行代码，">
+<meta name="twitter:image" content="http://niuhonggui.github.io/2018/11/27/Vue原理篇/1.png">
     
 
     
@@ -217,7 +219,7 @@
 </aside>
 
             
-            <section id="main"><article id="page-" class="article article-type-page" itemscope itemprop="blogPost">
+            <section id="main"><article id="post-Vue原理篇" class="article article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
         
@@ -225,10 +227,29 @@
                 
     
         <h1 class="article-title" itemprop="name">
-            相册
+            Vue原理篇
         </h1>
     
 
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2018/11/27/Vue原理篇/">
+            <time datetime="2018-11-27T06:02:47.000Z" itemprop="datePublished">2018-11-27</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Vue-js-设计模式/">-Vue.js -设计模式</a>
+    </div>
+
+                    </div>
                 
             </header>
         
@@ -236,7 +257,46 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="这个人很懒，相册-什么都没留下"><a href="#这个人很懒，相册-什么都没留下" class="headerlink" title="这个人很懒，相册 什么都没留下"></a>这个人很懒，相册 什么都没留下</h1>
+            <h1 id="MVVM-设计模式"><a href="#MVVM-设计模式" class="headerlink" title="MVVM 设计模式:"></a>MVVM 设计模式:</h1><h4 id="网页组成"><a href="#网页组成" class="headerlink" title="网页组成:"></a>网页组成:</h4><p>HTML 内容<br>CSS 样式<br>JS 交互行为<br>问题: JS 的功能过于集中: 即要操作数据，又要操作界面！扩展，易读维护成本高</p>
+<h4 id="重新划分"><a href="#重新划分" class="headerlink" title="重新划分:"></a>重新划分:</h4><p>View 视图 指网页中的元素和样式 HTML/CSS<br>Model 模型 指程序中创建的或从远程获取的数据<br>ViewModel 视图模型/控制器<br>封装之前的 DOM/JQUERY 操作, 把模型数据绑定到视图中指定位置<br>绑定: 不需要写一行代码，就可让页面元素内容和数据联动变化<br>其实: Vue 类型，提供的就是一种强大的 ViewModel 对象可自动同步页面视图和数据<br>设计模式原则：松耦合高内聚<br>MVVM 设计模式: 松耦合<br>视图的修改，与程序无关！</p>
+<h4 id="使用-Vue"><a href="#使用-Vue" class="headerlink" title="使用 Vue:"></a>使用 Vue:</h4><ol>
+<li>HTML 中, 创建视图 View, 其实就是以前的网页</li>
+<li>JS 中，定义/ajax 获取模型数据，其实就是以前的对象/数组/变量</li>
+<li>js 中，创建 Vue 类型的对象，将一个页面父元素与内存中一个数据对象绑定:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var vm=new Vue(&#123;</span><br><span class="line">  el: &quot;选择器&quot;,</span><br><span class="line">  data: 数据对象</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="原理-new-Vue"><a href="#原理-new-Vue" class="headerlink" title="原理: new Vue()"></a>原理: new Vue()</h3><h4 id="1-构建响应系统"><a href="#1-构建响应系统" class="headerlink" title="1.构建响应系统:"></a>1.构建响应系统:</h4><p>为模型数据中的每个属性，添加访问器属性<br>同时，将页面中的每个”{ { } }”加入监视队列<br>只要修改模型数据的属性，就会自动调用vm对应属性的set方法, set会:<br>①实际修改模型数据中的属性值<br>②通知监视队列，找到受此数据修改影响元素，改变元素内容。</p>
+<h4 id="2-构建虚拟DOM树-Virtual-DOM-Tree"><a href="#2-构建虚拟DOM树-Virtual-DOM-Tree" class="headerlink" title="2.构建虚拟DOM树: Virtual DOM Tree"></a>2.构建虚拟DOM树: Virtual DOM Tree</h4><p>什么是虚拟DOM树: 用js对象，描述出的DOM树<br>为什么: 遍历js对象，比遍历DOM元素要快的多！<br>    因为js对象中只包含关心的属性，不包含多余属性<br>    而DOM元素的属性却极其庞大！<br>何时: 每次模型数据更新时，都会重新创建虚拟DOM树<br>      然后，比对新旧两棵树，仅找到变化的节点,仅将变化的节点，实际修改到DOM树上<br>为什么快: </p>
+<pre><code>1. 仅包含关心的节点和数据
+2. 局部更新DOM树，避免大范围重排重绘
+3. 自动化的增删改查DOM操作，无需人工
+</code></pre><h1 id="实现-Vue-响应原理：访问器属性"><a href="#实现-Vue-响应原理：访问器属性" class="headerlink" title="实现 Vue 响应原理：访问器属性"></a>实现 Vue 响应原理：访问器属性</h1><p>什么是访问器属性：不直接存储属性值，专门对其它属性提供保护的特殊属性<br>何时: 只要使用自定义规则保护属性时<br>如何: 2 步:<br>1、定义一个闭包结构，实际存储属性值<br>2、定义一个访问器属性来保护闭包中的局部变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(obj, prop, descriptor)</span><br><span class="line">//obj：必需。目标对象</span><br><span class="line">//prop：必需。需定义或修改的属性的名字</span><br><span class="line">//descriptor：必需。目标属性所拥有的特性</span><br></pre></td></tr></table></figure>
+<p><img src="/2018/11/27/Vue原理篇/1.png" alt="Vue构建响应系统和创建虚拟DOM"></p>
+<h1 id="保护对象"><a href="#保护对象" class="headerlink" title="保护对象:"></a>保护对象:</h1><p>问题: js 中的对象可随时添加/删除/修改任何属性<br>解决: 对 js 中的对象提供保护！<br>如何:</p>
+<h4 id="保护单个属性"><a href="#保护单个属性" class="headerlink" title="保护单个属性:"></a>保护单个属性:</h4><p>如何: ES5 将属性重新分类: 1.数据属性: 直接存储属性值的属性 2.命名属性: 可用.直接访问的属性<br>命名属性又分为: 1.数据属性: 直接存储属性值的属性 2.访问器属性: 不实际存储属性，专门提供对其它数据属性的保护！ 3.内部属性: 不能用.直接访问的属性<br>保护数据属性:<br>ES5 中将每个属性，又细分为四大特性:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">    &#123;</span><br><span class="line">        id:1001</span><br><span class="line">        &#123;</span><br><span class="line">            value:1001, //实际存储属性值</span><br><span class="line">            writable:true, //控制是否可修改</span><br><span class="line">            enumerable:true, //控制是否可被for in遍历</span><br><span class="line">            强调: 只防止for in, //不防止用.直接访问！</span><br><span class="line">            configurable:true, //控制: 是否可删除该属性,是否可修改前两个特性一旦改为false，不可逆！</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="获取一个属性的四大特性"><a href="#获取一个属性的四大特性" class="headerlink" title="获取一个属性的四大特性:"></a>获取一个属性的四大特性:</h4><p>var attrs=Object.getOwnPropertyDescriptor(obj,”属性”)</p>
+<h4 id="修改属性的四大特性，保护属性"><a href="#修改属性的四大特性，保护属性" class="headerlink" title="修改属性的四大特性，保护属性:"></a>修改属性的四大特性，保护属性:</h4><ol>
+<li>仅修改一个属性的四大特性:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">       Object.defineProperty(obj,&quot;属性&quot;,&#123;</span><br><span class="line">         writable:false,</span><br><span class="line">         … …</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>批量修改多个属性的四大特性:</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperties(obj,&#123;</span><br><span class="line">    属性:&#123; 四大特性 …&#125;,</span><br><span class="line">    属性:&#123; 四大特性 …&#125;,</span><br><span class="line">… : …</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>问题: 无法使用自定义规则保护属性<br>解决: 用访问器属性保护数据属性<br>用访问器属性，保护数据属性:<br>什么是访问器属性: 不实际存储属性值，只提供对其它数据属性的保护<br>何时: 要用自定义规则保护属性时<br>如何: 1.前提: 先创建一个受保护的隐藏的数据属性，用于实际存储属性值！ 2.定义: 必须用 Object.defineProperty/defineProperties 定义，且也有四大特性:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(obj,&quot;访问器属性名&quot;,&#123;</span><br><span class="line">    get:function()&#123; return this.数据属性 &#125;,</span><br><span class="line">    set:function(value)&#123;</span><br><span class="line">        //value 会自动收到要赋的新值</span><br><span class="line">        if(value 满足条件)</span><br><span class="line">        this.数据属性=值;</span><br><span class="line">        else</span><br><span class="line">            throw new Error(&quot;错误提示&quot;)</span><br><span class="line">    &#125;,</span><br><span class="line">    enumerable:true,</span><br><span class="line">    configurable:true</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>使用: 访问器属性的用法和普通属性的用法完全一样</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">console.log(eric.age) //获取 eric 的 age</span><br></pre></td></tr></table></figure>
+<p>自动调用 eric.age 的 get()<br>eric.age=27 //修改 eric 的 age<br>自动调用 eric.age 的 set(27)</p>
+<h4 id="保护对象结构"><a href="#保护对象结构" class="headerlink" title="保护对象结构:"></a>保护对象结构:</h4><p>什么是: 禁止添加/删除属性<br>包括: 3 个级别:</p>
+<ol>
+<li>防扩展: 禁止添加新属性！<br>如何: Object.preventExtensions(obj)<br>原理: 每个对象中都有一个隐藏的内部 extensible:true<br>preventExtensions()将对象的 extensible 改为 false</li>
+<li>密封: 在兼具防扩展同时<br>禁止删除任何属性<br>如何: Object.seal(obj)<br>原理: 在修改 extensible:false 同时，自动修改每个属性的 configurable 为 false</li>
+<li>冻结: 在兼具密封的基础上，禁止修改一切属性值！<br>如何: Object.freeze(obj)<br>原理: 修改 extensible:false<br>修改每个属性的 configurable 为 false<br>修改每个属性的 writable 为 false</li>
+</ol>
+
         
         </div>
         <footer class="article-footer">
@@ -246,7 +306,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/相册/index.html" data-id="cjrzpmrpv00097wuet04bw45e" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/11/27/Vue原理篇/" data-id="cjrzpmrpx000c7wuexb1p05qn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -319,6 +379,16 @@
     </div>
     
         
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/07/jquery常用干货/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">jquery常用干货（不间断更新）</div>
+        </a>
+    
+</nav>
+
 
     
 </article>
