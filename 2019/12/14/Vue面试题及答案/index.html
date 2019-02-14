@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Vue面试题及答案 | BLOG</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍（都是一些基础的 vue 面试题，大神不用浪费时间往下看）（答案来自互联网，谨慎参考） 一、对于 MVVM 的理解？MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。View 代表 UI 组件">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue面试题及答案">
+<meta property="og:url" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/index.html">
+<meta property="og:site_name" content="BLOG">
+<meta property="og:description" content="整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍（都是一些基础的 vue 面试题，大神不用浪费时间往下看）（答案来自互联网，谨慎参考） 一、对于 MVVM 的理解？MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。View 代表 UI 组件">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/1.png">
+<meta property="og:updated_time" content="2019-02-14T07:56:40.856Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Vue面试题及答案">
+<meta name="twitter:description" content="整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍（都是一些基础的 vue 面试题，大神不用浪费时间往下看）（答案来自互联网，谨慎参考） 一、对于 MVVM 的理解？MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。View 代表 UI 组件">
+<meta name="twitter:image" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/1.png">
+    
+
+    
+        <link rel="alternate" href="/" title="BLOG" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/css/images/logo.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">BLOG</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/Home">首页</a>
+                
+                    <a class="main-nav-link" href="/archives">归档</a>
+                
+                    <a class="main-nav-link" href="/categories">分类</a>
+                
+                    <a class="main-nav-link" href="/tags">标签</a>
+                
+                    <a class="main-nav-link" href="/about">关于</a>
+                
+                    <a class="main-nav-link" href="/相册">相册</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/Home">首页</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">归档</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">分类</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">标签</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">关于</a></td>
+                
+                    <td><a class="main-nav-link" href="/相册">相册</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile" class="profile-fixed">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">NIUHONGGUI</h2>
+            <h3 id="title">Web Developer &amp; Designer</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>Chengdu, sichuan, China</span>
+            <a id="follow" target="_blank" href="https://github.com/ppoffice/">关注我</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                10
+                <span>文章</span>
+            </div>
+            <div class="article-info-block">
+                14
+                <span>标签</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="http://github.com/ppoffice/hexo-theme-icarus" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-Vue面试题及答案" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Vue面试题及答案
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/12/14/Vue面试题及答案/">
+            <time datetime="2019-12-14T07:29:09.000Z" itemprop="datePublished">2019-12-14</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Vue/">Vue</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍<br>（都是一些基础的 vue 面试题，大神不用浪费时间往下看）<br>（答案来自互联网，谨慎参考）</p>
+<h1 id="一、对于-MVVM-的理解？"><a href="#一、对于-MVVM-的理解？" class="headerlink" title="一、对于 MVVM 的理解？"></a>一、对于 MVVM 的理解？</h1><p>MVVM 是 Model-View-ViewModel 的缩写。<br>Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。<br>View 代表 UI 组件，它负责将数据模型转化成 UI 展现出来。<br>ViewModel 监听模型数据的改变和控制视图行为、处理用户交互，简单理解就是一个同步 View 和 Model 的对象，连接 Model 和 View。<br>在 MVVM 架构下，View 和 Model 之间并没有直接的联系，而是通过 ViewModel 进行交互，Model 和 ViewModel 之间的交互是双向的， 因此 View 数据的变化会同步到 Model 中，而 Model 数据的变化也会立即反应到 View 上。<br>ViewModel 通过双向数据绑定把 View 层和 Model 层连接了起来，而 View 和 Model 之间的同步工作完全是自动的，无需人为干涉，因此开发者只需关注业务逻辑，不需要手动操作 DOM, 不需要关注数据状态的同步问题，复杂的数据状态维护完全由 MVVM 来统一管理。</p>
+<h1 id="二、Vue-的生命周期"><a href="#二、Vue-的生命周期" class="headerlink" title="二、Vue 的生命周期"></a>二、Vue 的生命周期</h1><p>beforeCreate（创建前） 在数据观测和初始化事件还未开始<br>created（创建后） 完成数据观测，属性和方法的运算，初始化事件，$el属性还没有显示出来<br>beforeMount（载入前） 在挂载开始之前被调用，相关的render函数首次被调用。实例已完成以下的配置：编译模板，把data里面的数据和模板生成html。注意此时还没有挂载html到页面上。<br>mounted（载入后） 在el 被新创建的 vm.$el 替换，并挂载到实例上去之后调用。实例已完成以下的配置：用上面编译好的 html 内容替换 el 属性指向的 DOM 对象。完成模板中的 html 渲染到 html 页面中。此过程中进行 ajax 交互。<br>beforeUpdate（更新前） 在数据更新之前调用，发生在虚拟 DOM 重新渲染和打补丁之前。可以在该钩子中进一步地更改状态，不会触发附加的重渲染过程。<br>updated（更新后） 在由于数据更改导致的虚拟 DOM 重新渲染和打补丁之后调用。调用时，组件 DOM 已经更新，所以可以执行依赖于 DOM 的操作。然而在大多数情况下，应该避免在此期间更改状态，因为这可能会导致更新无限循环。该钩子在服务器端渲染期间不被调用。<br>beforeDestroy（销毁前） 在实例销毁之前调用。实例仍然完全可用。<br>destroyed（销毁后） 在实例销毁之后调用。调用后，所有的事件监听器会被移除，所有的子实例也会被销毁。该钩子在服务器端渲染期间不被调用。</p>
+<h4 id="1-什么是-vue-生命周期？"><a href="#1-什么是-vue-生命周期？" class="headerlink" title="1.什么是 vue 生命周期？"></a>1.什么是 vue 生命周期？</h4><p>答： Vue 实例从创建到销毁的过程，就是生命周期。从开始创建、初始化数据、编译模板、挂载 Dom→ 渲染、更新 → 渲染、销毁等一系列过程，称之为 Vue 的生命周期。</p>
+<h4 id="2-vue-生命周期的作用是什么？"><a href="#2-vue-生命周期的作用是什么？" class="headerlink" title="2.vue 生命周期的作用是什么？"></a>2.vue 生命周期的作用是什么？</h4><p>答：它的生命周期中有多个事件钩子，让我们在控制整个 Vue 实例的过程时更容易形成好的逻辑。</p>
+<h4 id="3-vue-生命周期总共有几个阶段？"><a href="#3-vue-生命周期总共有几个阶段？" class="headerlink" title="3.vue 生命周期总共有几个阶段？"></a>3.vue 生命周期总共有几个阶段？</h4><p>答：它可以总共分为 8 个阶段：创建前/后, 载入前/后,更新前/后,销毁前/销毁后。</p>
+<h4 id="4-第一次页面加载会触发哪几个钩子？"><a href="#4-第一次页面加载会触发哪几个钩子？" class="headerlink" title="4.第一次页面加载会触发哪几个钩子？"></a>4.第一次页面加载会触发哪几个钩子？</h4><p>答：会触发 下面这几个 beforeCreate, created, beforeMount, mounted 。</p>
+<h4 id="5-DOM-渲染在-哪个周期中就已经完成？"><a href="#5-DOM-渲染在-哪个周期中就已经完成？" class="headerlink" title="5.DOM 渲染在 哪个周期中就已经完成？"></a>5.DOM 渲染在 哪个周期中就已经完成？</h4><p>答：DOM 渲染在 mounted 中就已经完成了。</p>
+<h1 id="三、-Vue-实现数据双向绑定的原理：Object-defineProperty"><a href="#三、-Vue-实现数据双向绑定的原理：Object-defineProperty" class="headerlink" title="三、 Vue 实现数据双向绑定的原理：Object.defineProperty()"></a>三、 Vue 实现数据双向绑定的原理：Object.defineProperty()</h1><p>vue 实现数据双向绑定主要是：采用数据劫持结合发布者-订阅者模式的方式，通过 Object.defineProperty（）来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应监听回调。当把一个普通 Javascript 对象传给 Vue 实例来作为它的 data 选项时，Vue 将遍历它的属性，用 Object.defineProperty 将它们转为 getter/setter。用户看不到 getter/setter，但是在内部它们让 Vue 追踪依赖，在属性被访问和修改时通知变化。</p>
+<p>vue 的数据双向绑定 将 MVVM 作为数据绑定的入口，整合 Observer，Compile 和 Watcher 三者，通过 Observer 来监听自己的 model 的数据变化，通过 Compile 来解析编译模板指令（vue 中是用来解析 { { } }），最终利用 watcher 搭起 observer 和 Compile 之间的通信桥梁，达到数据变化 —&gt;视图更新；视图交互变化（input）—&gt;数据 model 变更双向绑定效果。</p>
+<p>js 实现简单的双向绑定</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;txt&quot;&gt;</span><br><span class="line">    &lt;p id=&quot;show&quot;&gt;&lt;/p&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var obj = &#123;&#125;</span><br><span class="line">    Object.defineProperty(obj, &apos;txt&apos;, &#123;</span><br><span class="line">        get: function () &#123;</span><br><span class="line">            return obj</span><br><span class="line">        &#125;,</span><br><span class="line">        set: function (newValue) &#123;</span><br><span class="line">            document.getElementById(&apos;txt&apos;).value = newValue</span><br><span class="line">            document.getElementById(&apos;show&apos;).innerHTML = newValue</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">    document.addEventListener(&apos;keyup&apos;, function (e) &#123;</span><br><span class="line">        obj.txt = e.target.value</span><br><span class="line">    &#125;)</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="四、Vue-组件间的参数传递"><a href="#四、Vue-组件间的参数传递" class="headerlink" title="四、Vue 组件间的参数传递"></a>四、Vue 组件间的参数传递</h1><h4 id="1-父组件与子组件传值"><a href="#1-父组件与子组件传值" class="headerlink" title="1.父组件与子组件传值"></a>1.父组件与子组件传值</h4><p>父组件传给子组件：子组件通过 props 方法接受数据;<br>子组件传给父组件：\$emit 方法传递参数</p>
+<h3 id="2-非父子组件间的数据传递，兄弟组件传值"><a href="#2-非父子组件间的数据传递，兄弟组件传值" class="headerlink" title="2.非父子组件间的数据传递，兄弟组件传值"></a>2.非父子组件间的数据传递，兄弟组件传值</h3><p>eventBus，就是创建一个事件中心，相当于中转站，可以用它来传递事件和接收事件。项目比较小时，用这个比较合适。（虽然也有不少人推荐直接用 VUEX，具体来说看需求咯。技术只是手段，目的达到才是王道。）</p>
+<h1 id="五、Vue-的路由实现：hash-模式-和-history-模式"><a href="#五、Vue-的路由实现：hash-模式-和-history-模式" class="headerlink" title="五、Vue 的路由实现：hash 模式 和 history 模式"></a>五、Vue 的路由实现：hash 模式 和 history 模式</h1><p>hash 模式：在浏览器中符号“#”，#以及#后面的字符称之为 hash，用 window.location.hash 读取；<br>特点：hash 虽然在 URL 中，但不被包括在 HTTP 请求中；用来指导浏览器动作，对服务端安全无用，hash 不会重加载页面。<br>hash 模式下，仅 hash 符号之前的内容会被包含在请求中，如 <a href="http://www.xxx.com，因此对于后端来说，即使没有做到对路由的全覆盖，也不会返回" target="_blank" rel="noopener">http://www.xxx.com，因此对于后端来说，即使没有做到对路由的全覆盖，也不会返回</a> 404 错误。</p>
+<p>history 模式：history 采用 HTML5 的新特性；且提供了两个新方法：pushState（），replaceState（）可以对浏览器历史记录栈进行修改，以及 popState 事件的监听到状态变更。<br>history 模式下，前端的 URL 必须和实际向后端发起请求的 URL 一致，如 <a href="http://www.xxx.com/items/id。后端如果缺少对" target="_blank" rel="noopener">http://www.xxx.com/items/id。后端如果缺少对</a> /items/id 的路由处理，将返回 404 错误。Vue-Router 官网里如此描述：“不过这种模式要玩好，还需要后台配置支持……所以呢，你要在服务端增加一个覆盖所有情况的候选资源：如果 URL 匹配不到任何静态资源，则应该返回同一个 index.html 页面，这个页面就是你 app 依赖的页面。”</p>
+<h1 id="六、vue-路由的钩子函数（守卫）"><a href="#六、vue-路由的钩子函数（守卫）" class="headerlink" title="六、vue 路由的钩子函数（守卫）"></a>六、vue 路由的钩子函数（守卫）</h1><p>首页可以控制导航跳转，beforeEach，afterEach 等，一般用于页面 title 的修改。一些需要登录才能调整页面的重定向功能。</p>
+<p>beforeEach 主要有 3 个参数 to，from，next：</p>
+<p>to：route 即将进入的目标路由对象，</p>
+<p>from：route 当前导航正要离开的路由</p>
+<p>next：function 一定要调用该方法 resolve 这个钩子。执行效果依赖 next 方法的调用参数。可以控制网页的跳转。</p>
+<h1 id="七、vuex-是什么？怎么使用？哪种功能场景使用它？"><a href="#七、vuex-是什么？怎么使用？哪种功能场景使用它？" class="headerlink" title="七、vuex 是什么？怎么使用？哪种功能场景使用它？"></a>七、vuex 是什么？怎么使用？哪种功能场景使用它？</h1><p>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。<br>在 main.js 引入 store，注入。新建了一个目录 store，….. export 。<br>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车<br><img src="/2019/12/14/Vue面试题及答案/1.png" alt="VueX工作原理"><br>state<br>Vuex 使用单一状态树,即每个应用将仅仅包含一个 store 实例，但单一状态树和模块化并不冲突。存放的数据状态，不可以直接修改里面的数据。<br>mutations<br>mutations 定义的方法动态修改 Vuex 的 store 中的状态或数据。<br>getters<br>类似 vue 的计算属性，主要用来过滤一些数据。<br>action<br>actions 可以理解为通过将 mutations 里面处里数据的方法变成可异步的处理数据的方法，简单的说就是异步操作数据。view 层通过 store.dispath 来分发 action。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123; //store实例</span><br><span class="line">      state: &#123;</span><br><span class="line">         count: 0</span><br><span class="line">             &#125;,</span><br><span class="line">      mutations: &#123;</span><br><span class="line">         increment (state) &#123;</span><br><span class="line">          state.count++</span><br><span class="line">         &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">      actions: &#123;</span><br><span class="line">         increment (context) &#123;</span><br><span class="line">          context.commit(&apos;increment&apos;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>modules<br>项目特别复杂的时候，可以让每一个模块拥有自己的 state、mutation、action、getters,使得结构非常清晰，方便管理。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line"> &#125;</span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<h1 id="八、keep-alive-的了解？"><a href="#八、keep-alive-的了解？" class="headerlink" title="八、keep-alive 的了解？"></a>八、keep-alive 的了解？</h1><p>keep-alive 是 Vue 内置的一个组件，可以使被包含的组件保留状态，或避免重新渲染。<br>在 vue 2.1.0 版本之后，keep-alive 新加入了两个属性: include(包含的组件缓存) 与 exclude(排除的组件不缓存，优先级大于 include) 。</p>
+<p>使用方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;keep-alive include=&apos;include_components&apos; exclude=&apos;exclude_components&apos;&gt;</span><br><span class="line">  &lt;component&gt;</span><br><span class="line">    &lt;!-- 该组件是否缓存取决于include和exclude属性 --&gt;</span><br><span class="line">  &lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+<p>参数解释<br>include - 字符串或正则表达式，只有名称匹配的组件会被缓存<br>exclude - 字符串或正则表达式，任何名称匹配的组件都不会被缓存<br>include 和 exclude 的属性允许组件有条件地缓存。二者都可以用“，”分隔字符串、正则表达式、数组。当使用正则或者是数组时，要记得使用 v-bind 。</p>
+<p>使用示例</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 逗号分隔字符串，只有组件a与b被缓存。 --&gt;</span><br><span class="line">&lt;keep-alive include=&quot;a,b&quot;&gt;</span><br><span class="line">  &lt;component&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 正则表达式 (需要使用 v-bind，符合匹配规则的都会被缓存) --&gt;</span><br><span class="line">&lt;keep-alive :include=&quot;/a|b/&quot;&gt;</span><br><span class="line">  &lt;component&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- Array (需要使用 v-bind，被包含的都会被缓存) --&gt;</span><br><span class="line">&lt;keep-alive :include=&quot;[&apos;a&apos;, &apos;b&apos;]&quot;&gt;</span><br><span class="line">  &lt;component&gt;&lt;/component&gt;</span><br><span class="line">&lt;/keep-alive&gt;</span><br></pre></td></tr></table></figure>
+<h1 id="一句话就能回答的面试题"><a href="#一句话就能回答的面试题" class="headerlink" title="一句话就能回答的面试题"></a>一句话就能回答的面试题</h1><h4 id="1-css只在当前组件起作用"><a href="#1-css只在当前组件起作用" class="headerlink" title="1.css只在当前组件起作用"></a>1.css只在当前组件起作用</h4><p>答：在style标签中写入scoped即可 例如：<style scoped></style></p>
+<h4 id="2-v-if-和-v-show-区别"><a href="#2-v-if-和-v-show-区别" class="headerlink" title="2.v-if 和 v-show 区别"></a>2.v-if 和 v-show 区别</h4><p>答：v-if按照条件是否渲染，v-show是display的block或none；</p>
+<h4 id="3-route和-router的区别"><a href="#3-route和-router的区别" class="headerlink" title="3.$route和$router的区别"></a>3.$route和$router的区别</h4><p>答：$route是“路由信息对象”，包括path，params，hash，query，fullPath，matched，name等路由信息参数。而$router是“路由实例”对象包括了路由的跳转方法，钩子函数等。</p>
+<h4 id="4-vue-js的两个核心是什么？"><a href="#4-vue-js的两个核心是什么？" class="headerlink" title="4.vue.js的两个核心是什么？"></a>4.vue.js的两个核心是什么？</h4><p>答：数据驱动、组件系统(angular的指令服务)</p>
+<h4 id="5-vue几种常用的指令"><a href="#5-vue几种常用的指令" class="headerlink" title="5.vue几种常用的指令"></a>5.vue几种常用的指令</h4><p>答：v-for 、 v-if 、v-bind、v-on、v-show、v-else</p>
+<h4 id="6-vue常用的修饰符？"><a href="#6-vue常用的修饰符？" class="headerlink" title="6.vue常用的修饰符？"></a>6.vue常用的修饰符？</h4><p>答：.prevent: 提交事件不再重载页面；.stop: 阻止单击事件冒泡；.self: 当事件发生在该元素本身而不是子元素的时候会触发；.capture: 事件侦听，事件发生的时候会调用</p>
+<h4 id="7-v-on-可以绑定多个方法吗？"><a href="#7-v-on-可以绑定多个方法吗？" class="headerlink" title="7.v-on 可以绑定多个方法吗？"></a>7.v-on 可以绑定多个方法吗？</h4><p>答：可以</p>
+<h4 id="8-vue中-key-值的作用？"><a href="#8-vue中-key-值的作用？" class="headerlink" title="8.vue中 key 值的作用？"></a>8.vue中 key 值的作用？</h4><p>答：当 Vue.js 用 v-for 正在更新已渲染过的元素列表时，它默认用“就地复用”策略。如果数据项的顺序被改变，Vue 将不会移动 DOM 元素来匹配数据项的顺序， 而是简单复用此处每个元素，并且确保它在特定索引下显示已被渲染过的每个元素。key的作用主要是为了高效的更新虚拟DOM。</p>
+<h4 id="9-什么是vue的计算属性？"><a href="#9-什么是vue的计算属性？" class="headerlink" title="9.什么是vue的计算属性？"></a>9.什么是vue的计算属性？</h4><p>答：在模板中放入太多的逻辑会让模板过重且难以维护，在需要对数据进行复杂处理，且可能多次使用的情况下，尽量采取计算属性的方式。好处：①使得数据处理结构清晰；②依赖于数据，数据更新，处理结果自动更新；③计算属性内部this指向vm实例；④在template调用时，直接写计算属性名即可；⑤常用的是getter方法，获取数据，也可以使用set方法改变数据；⑥相较于methods，不管依赖的数据变不变，methods都会重新计算，但是依赖数据不变的时候computed从缓存中获取，不会重新计算。</p>
+<h4 id="10-vue等单页面应用及其优缺点"><a href="#10-vue等单页面应用及其优缺点" class="headerlink" title="10.vue等单页面应用及其优缺点"></a>10.vue等单页面应用及其优缺点</h4><p>答：优点：Vue 的目标是通过尽可能简单的 API 实现响应的数据绑定和组合的视图组件，核心是一个响应的数据绑定系统。MVVM、数据驱动、组件化、轻量、简洁、高效、快速、模块友好。<br>缺点：不支持低版本的浏览器，最低只支持到IE9；不利于SEO的优化（如果要支持SEO，建议通过服务端来进行渲染组件）；第一次加载首页耗时相对长一些；不可以使用浏览器的导航按钮需要自行实现前进、后退。</p>
+<p>PS：缺少的案例代码，这几天再补上去。有些地方可能描述的不够清楚，如果有歧义，可能是我理解错了。<br>看到这你如果还不够过瘾，我给你一个链接 <a href="https://segmentfault.com/a/1190000016351284" target="_blank" rel="noopener">思否</a>81道够你查漏补缺，我这式常见的。</p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/" data-id="cjs4bzc5k0002houexoratye7" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+    
+        <a href="/2018/11/27/Vue原理篇/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">下一篇</strong>
+            <div class="article-nav-title">Vue原理篇</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    
+
+</section>
+            
+                
+<aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">最近发表</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/12/14/Vue面试题及答案/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/12/14/Vue面试题及答案/" class="title">Vue面试题及答案</a></p>
+                            <p class="item-date"><time datetime="2019-12-14T07:29:09.000Z" itemprop="datePublished">2019-12-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/27/Vue原理篇/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/27/Vue原理篇/" class="title">Vue原理篇</a></p>
+                            <p class="item-date"><time datetime="2018-11-27T06:02:47.000Z" itemprop="datePublished">2018-11-27</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/11/07/jquery常用干货/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/11/07/jquery常用干货/" class="title">jquery常用干货（不间断更新）</a></p>
+                            <p class="item-date"><time datetime="2018-11-07T03:56:22.000Z" itemprop="datePublished">2018-11-07</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/10/02/设计模式/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/10/02/设计模式/" class="title">初探设计模式</a></p>
+                            <p class="item-date"><time datetime="2018-10-02T01:57:35.000Z" itemprop="datePublished">2018-10-02</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/09/27/falseData/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/09/27/falseData/" class="title">模拟假数据</a></p>
+                            <p class="item-date"><time datetime="2018-09-27T04:56:22.000Z" itemprop="datePublished">2018-09-27</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js-设计模式/">-Vue.js -设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">-photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Vue-js-设计模式/" style="font-size: 10px;">-Vue.js -设计模式</a> <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/photo/" style="font-size: 10px;">-photo</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 20px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2019 NIUHONGGUI<br>
+            版权所有 <a href="http://hexo.io/" target="_blank">Hexo</a>主题版权 <a href="http://github.com/niuhonggui">niuhonggui</a>
+        </div>
+    </div>
+</footer>
+        
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
