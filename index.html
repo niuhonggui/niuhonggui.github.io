@@ -164,11 +164,11 @@
         </div>
         <div class="article-info profile-block">
             <div class="article-info-block">
-                10
+                11
                 <span>文章</span>
             </div>
             <div class="article-info-block">
-                14
+                15
                 <span>标签</span>
             </div>
         </div>
@@ -307,7 +307,137 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/" data-id="cjs77yjvi000du0uezd8pqr74" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/" data-id="cjscwudv30008c0ue753ra3u2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+
+        </footer>
+    </div>
+    
+</article>
+
+
+
+    <article id="post-git" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 itemprop="name">
+            <a class="article-title" href="/2019/02/20/git/">git</a>
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2019/02/20/git/">
+            <time datetime="2019-02-20T07:56:20.000Z" itemprop="datePublished">2019-02-20</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/git/">-git</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <h1 id="如何将创建的工程同步到github上。"><a href="#如何将创建的工程同步到github上。" class="headerlink" title="如何将创建的工程同步到github上。"></a>如何将创建的工程同步到github上。</h1><h4 id="第一步：创建工程之后，用终端进入工程。"><a href="#第一步：创建工程之后，用终端进入工程。" class="headerlink" title="第一步：创建工程之后，用终端进入工程。"></a>第一步：创建工程之后，用终端进入工程。</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /Users/hanwenguang/Desktop/pods/TestPreject</span><br></pre></td></tr></table></figure>
+<h4 id="第二步：建立本地仓库"><a href="#第二步：建立本地仓库" class="headerlink" title="第二步：建立本地仓库"></a>第二步：建立本地仓库</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+<p>第三步：将本地项目工作区的所有文件添加到暂存区<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure></p>
+<p>第四步：将暂存区的文件提交到本地仓库<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m “注释&quot;</span><br></pre></td></tr></table></figure></p>
+<p>第五步： 在Github上创建自己的 New repository 名字注释自定义<br>第六步：将本地仓库关联到Github上（后加上仓库地址：New repository后的地址）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin 地址</span><br></pre></td></tr></table></figure></p>
+<p>第七步：将代码由本地仓库上传到Github远程仓库，刷新即可看到上传成功。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//(不加这句可能报错出现错误的主要原因是github中的README.md文件不在本地代码目录中</span><br><span class="line">$  git pull --rebase origin master </span><br><span class="line">//可以通过该命令进行代码合并</span><br><span class="line">$  git push -u origin master</span><br><span class="line">//需要填写账号、密码时候，自己填写。通常一次通过之后就不需要了。</span><br></pre></td></tr></table></figure></p>
+<h4 id="这样，上传文件存储和上传已有工程都已经成功。接下来下提交代码的命令："><a href="#这样，上传文件存储和上传已有工程都已经成功。接下来下提交代码的命令：" class="headerlink" title="这样，上传文件存储和上传已有工程都已经成功。接下来下提交代码的命令："></a>这样，上传文件存储和上传已有工程都已经成功。接下来下提交代码的命令：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">同步到服务器前先需要将服务器代码同步到本地</span><br><span class="line">命令：$  git pull</span><br><span class="line">如果执行失败，就按照提示还原有冲突的文件，然后再次尝试同步。</span><br><span class="line">命令：$  git checkout – &lt;有冲突的文件路径&gt;</span><br><span class="line">同步到服务器</span><br><span class="line">命令：$  git push origin master</span><br></pre></td></tr></table></figure>
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://niuhonggui.github.io/2019/02/20/git/" data-id="cjscwuduy0006c0uexp0gbxui" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -473,7 +603,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/11/27/Vue原理篇/" data-id="cjs77yjuw0001u0ue05hq1dyy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/11/27/Vue原理篇/" data-id="cjscwudut0003c0uecbvlfxb0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -654,7 +784,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/11/07/jquery常用干货/" data-id="cjs77yjvk000gu0ueox1ds31r" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/11/07/jquery常用干货/" data-id="cjscwudv8000cc0ue95yrkufy" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -779,7 +909,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/10/02/设计模式/" data-id="cjs77yjvo000ju0ue9bptrwgl" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/10/02/设计模式/" data-id="cjscwudvd000lc0uexh2lzu8l" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -915,7 +1045,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/09/27/falseData/" data-id="cjs77yjv50006u0uecpshkag9" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/09/27/falseData/" data-id="cjscwudv7000bc0uekci0qys4" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1045,7 +1175,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/08/11/原理图/" data-id="cjs77yjvj000eu0uea7n0g16k" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/08/11/原理图/" data-id="cjscwudvb000gc0ue1p74tp53" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1193,7 +1323,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjs77yjvf000au0ueafguc78m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/07/10/javascript设计模式object/" data-id="cjscwudvc000jc0ueo41x3p97" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1325,7 +1455,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/06/20/WebpackReact/" data-id="cjs77yjv10003u0ued59v3z9f" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/06/20/WebpackReact/" data-id="cjscwudup0001c0ue319iraex" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1547,7 +1677,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjs77yjva0008u0ueufgcnp31" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/05/24/hexo+github搭建个人博客/" data-id="cjscwudv50009c0uesq4btj03" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1623,130 +1753,9 @@
 
 
 
-    <article id="post-置顶" class="article article-type-post" itemscope itemprop="blogPost">
-    <div class="article-inner">
-        
-        
-            <header class="article-header">
-                
-    
-        <h1 itemprop="name">
-            <a class="article-title" href="/2018/04/09/置顶/">置顶</a>
-        </h1>
-    
-
-                
-                    <div class="article-meta">
-                        
-    <div class="article-date">
-        <i class="fa fa-calendar"></i>
-        <a href="/2018/04/09/置顶/">
-            <time datetime="2018-04-09T14:56:02.000Z" itemprop="datePublished">2018-04-09</time>
-        </a>
-    </div>
-
-
-                        
-                        
-    <div class="article-tag">
-        <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/diary/">-diary</a>
-    </div>
-
-                    </div>
-                
-            </header>
-        
-        
-        <div class="article-entry" itemprop="articleBody">
-        
-            
-            <h1 id="前端里程碑"><a href="#前端里程碑" class="headerlink" title="前端里程碑"></a>前端里程碑</h1><p>谢谢github,好好利用,定个小任务每月一次跟新技术概况，记录每个月自己技术的成长，今天天气晴，地点：酒泉。</p>
-
-        
-        </div>
-        <footer class="article-footer">
-            <div class="share-container">
-
-
-
-</div>
-
-    <a data-url="http://niuhonggui.github.io/2018/04/09/置顶/" data-id="cjs77yjvl000hu0uesrfewgrf" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
-<script>
-    (function ($) {
-        // Prevent duplicate binding
-        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
-            __SHARE_BUTTON_BINDED__ = true;
-        } else {
-            return;
-        }
-        $('body').on('click', function() {
-            $('.article-share-box.on').removeClass('on');
-        }).on('click', '.article-share-link', function(e) {
-            e.stopPropagation();
-
-            var $this = $(this),
-                url = $this.attr('data-url'),
-                encodedUrl = encodeURIComponent(url),
-                id = 'article-share-box-' + $this.attr('data-id'),
-                offset = $this.offset(),
-                box;
-
-            if ($('#' + id).length) {
-                box = $('#' + id);
-
-                if (box.hasClass('on')){
-                    box.removeClass('on');
-                    return;
-                }
-            } else {
-                var html = [
-                    '<div id="' + id + '" class="article-share-box">',
-                        '<input class="article-share-input" value="' + url + '">',
-                        '<div class="article-share-links">',
-                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
-                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
-                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
-                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
-                        '</div>',
-                    '</div>'
-                ].join('');
-
-              box = $(html);
-
-              $('body').append(box);
-            }
-
-            $('.article-share-box.on').hide();
-
-            box.css({
-                top: offset.top + 25,
-                left: offset.left
-            }).addClass('on');
-
-        }).on('click', '.article-share-box', function (e) {
-            e.stopPropagation();
-        }).on('click', '.article-share-box-input', function () {
-            $(this).select();
-        }).on('click', '.article-share-box-link', function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-
-            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
-        });
-    })(jQuery);
-</script>
-
-            
-    
-
-        </footer>
-    </div>
-    
-</article>
-
-
+    <nav id="page-nav">
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">下一页 &raquo;</a>
+    </nav>
 </section>
             
                 
@@ -1774,6 +1783,25 @@
                             <p class="item-category"></p>
                             <p class="item-title"><a href="/2019/12/14/Vue面试题及答案/" class="title">Vue面试题及答案</a></p>
                             <p class="item-date"><time datetime="2019-12-14T07:29:09.000Z" itemprop="datePublished">2019-12-14</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/02/20/git/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/02/20/git/" class="title">git</a></p>
+                            <p class="item-date"><time datetime="2019-02-20T07:56:20.000Z" itemprop="datePublished">2019-02-20</time></p>
                         </div>
                     </li>
                 
@@ -1834,25 +1862,6 @@
                         </div>
                     </li>
                 
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/09/27/falseData/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/09/27/falseData/" class="title">模拟假数据</a></p>
-                            <p class="item-date"><time datetime="2018-09-27T04:56:22.000Z" itemprop="datePublished">2018-09-27</time></p>
-                        </div>
-                    </li>
-                
             </ul>
         </div>
     </div>
@@ -1864,7 +1873,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -1873,7 +1882,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js-设计模式/">-Vue.js -设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">-photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue-js-设计模式/">-Vue.js -设计模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/diary/">-diary</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">-git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/photo/">-photo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Jquery/">Jquery</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/React/">React</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Vue/">Vue</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/firebaseio/">firebaseio</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/github/">github</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/hexo/">hexo</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jsonServer/">jsonServer</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/object/">object</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/webpack/">webpack</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/设计模式/">设计模式</a><span class="tag-list-count">2</span></li></ul>
         </div>
     </div>
 
@@ -1882,7 +1891,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/Vue-js-设计模式/" style="font-size: 10px;">-Vue.js -设计模式</a> <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/photo/" style="font-size: 10px;">-photo</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 20px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a>
+            <a href="/tags/Vue-js-设计模式/" style="font-size: 10px;">-Vue.js -设计模式</a> <a href="/tags/diary/" style="font-size: 10px;">-diary</a> <a href="/tags/git/" style="font-size: 10px;">-git</a> <a href="/tags/photo/" style="font-size: 10px;">-photo</a> <a href="/tags/Jquery/" style="font-size: 10px;">Jquery</a> <a href="/tags/React/" style="font-size: 10px;">React</a> <a href="/tags/Vue/" style="font-size: 10px;">Vue</a> <a href="/tags/firebaseio/" style="font-size: 10px;">firebaseio</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/github/" style="font-size: 10px;">github</a> <a href="/tags/hexo/" style="font-size: 10px;">hexo</a> <a href="/tags/jsonServer/" style="font-size: 10px;">jsonServer</a> <a href="/tags/object/" style="font-size: 20px;">object</a> <a href="/tags/webpack/" style="font-size: 10px;">webpack</a> <a href="/tags/设计模式/" style="font-size: 20px;">设计模式</a>
         </div>
     </div>
 
