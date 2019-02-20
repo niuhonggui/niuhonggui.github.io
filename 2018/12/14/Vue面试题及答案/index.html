@@ -9,16 +9,16 @@
 <meta name="keywords" content="Vue">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Vue面试题及答案">
-<meta property="og:url" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/index.html">
+<meta property="og:url" content="http://niuhonggui.github.io/2018/12/14/Vue面试题及答案/index.html">
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍（都是一些基础的 vue 面试题，大神不用浪费时间往下看）（答案来自互联网，谨慎参考） 一、对于 MVVM 的理解？MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。View 代表 UI 组件">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/1.png">
-<meta property="og:updated_time" content="2019-02-14T07:56:40.856Z">
+<meta property="og:image" content="http://niuhonggui.github.io/2018/12/14/Vue面试题及答案/1.png">
+<meta property="og:updated_time" content="2019-02-20T08:19:24.629Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Vue面试题及答案">
 <meta name="twitter:description" content="整理面试题其实就是一次温故的过程，只是为了查漏补缺，看看自己那些方面还不懂，框架不用很容易忘记，为了经常方便温故自己整理一遍（都是一些基础的 vue 面试题，大神不用浪费时间往下看）（答案来自互联网，谨慎参考） 一、对于 MVVM 的理解？MVVM 是 Model-View-ViewModel 的缩写。Model 代表数据模型，Model 中定义数据修改和操作的业务逻辑。View 代表 UI 组件">
-<meta name="twitter:image" content="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/1.png">
+<meta name="twitter:image" content="http://niuhonggui.github.io/2018/12/14/Vue面试题及答案/1.png">
     
 
     
@@ -236,8 +236,8 @@
                         
     <div class="article-date">
         <i class="fa fa-calendar"></i>
-        <a href="/2019/12/14/Vue面试题及答案/">
-            <time datetime="2019-12-14T07:29:09.000Z" itemprop="datePublished">2019-12-14</time>
+        <a href="/2018/12/14/Vue面试题及答案/">
+            <time datetime="2018-12-14T07:29:09.000Z" itemprop="datePublished">2018-12-14</time>
         </a>
     </div>
 
@@ -278,7 +278,7 @@
 <p>to：route 即将进入的目标路由对象，</p>
 <p>from：route 当前导航正要离开的路由</p>
 <p>next：function 一定要调用该方法 resolve 这个钩子。执行效果依赖 next 方法的调用参数。可以控制网页的跳转。</p>
-<h1 id="七、vuex-是什么？怎么使用？哪种功能场景使用它？"><a href="#七、vuex-是什么？怎么使用？哪种功能场景使用它？" class="headerlink" title="七、vuex 是什么？怎么使用？哪种功能场景使用它？"></a>七、vuex 是什么？怎么使用？哪种功能场景使用它？</h1><p>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。<br>在 main.js 引入 store，注入。新建了一个目录 store，….. export 。<br>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车<br><img src="/2019/12/14/Vue面试题及答案/1.png" alt="VueX工作原理"><br>state<br>Vuex 使用单一状态树,即每个应用将仅仅包含一个 store 实例，但单一状态树和模块化并不冲突。存放的数据状态，不可以直接修改里面的数据。<br>mutations<br>mutations 定义的方法动态修改 Vuex 的 store 中的状态或数据。<br>getters<br>类似 vue 的计算属性，主要用来过滤一些数据。<br>action<br>actions 可以理解为通过将 mutations 里面处里数据的方法变成可异步的处理数据的方法，简单的说就是异步操作数据。view 层通过 store.dispath 来分发 action。</p>
+<h1 id="七、vuex-是什么？怎么使用？哪种功能场景使用它？"><a href="#七、vuex-是什么？怎么使用？哪种功能场景使用它？" class="headerlink" title="七、vuex 是什么？怎么使用？哪种功能场景使用它？"></a>七、vuex 是什么？怎么使用？哪种功能场景使用它？</h1><p>只用来读取的状态集中放在 store 中； 改变状态的方式是提交 mutations，这是个同步的事物； 异步逻辑应该封装在 action 中。<br>在 main.js 引入 store，注入。新建了一个目录 store，….. export 。<br>场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车<br><img src="/2018/12/14/Vue面试题及答案/1.png" alt="VueX工作原理"><br>state<br>Vuex 使用单一状态树,即每个应用将仅仅包含一个 store 实例，但单一状态树和模块化并不冲突。存放的数据状态，不可以直接修改里面的数据。<br>mutations<br>mutations 定义的方法动态修改 Vuex 的 store 中的状态或数据。<br>getters<br>类似 vue 的计算属性，主要用来过滤一些数据。<br>action<br>actions 可以理解为通过将 mutations 里面处里数据的方法变成可异步的处理数据的方法，简单的说就是异步操作数据。view 层通过 store.dispath 来分发 action。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">const store = new Vuex.Store(&#123; //store实例</span><br><span class="line">      state: &#123;</span><br><span class="line">         count: 0</span><br><span class="line">             &#125;,</span><br><span class="line">      mutations: &#123;</span><br><span class="line">         increment (state) &#123;</span><br><span class="line">          state.count++</span><br><span class="line">         &#125;</span><br><span class="line">          &#125;,</span><br><span class="line">      actions: &#123;</span><br><span class="line">         increment (context) &#123;</span><br><span class="line">          context.commit(&apos;increment&apos;)</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 <p>modules<br>项目特别复杂的时候，可以让每一个模块拥有自己的 state、mutation、action、getters,使得结构非常清晰，方便管理。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">const moduleA = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;,</span><br><span class="line">  getters: &#123; ... &#125;</span><br><span class="line"> &#125;</span><br><span class="line">const moduleB = &#123;</span><br><span class="line">  state: &#123; ... &#125;,</span><br><span class="line">  mutations: &#123; ... &#125;,</span><br><span class="line">  actions: &#123; ... &#125;</span><br><span class="line"> &#125;</span><br><span class="line"></span><br><span class="line">const store = new Vuex.Store(&#123;</span><br><span class="line">  modules: &#123;</span><br><span class="line">    a: moduleA,</span><br><span class="line">    b: moduleB</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
@@ -309,7 +309,7 @@
 
 </div>
 
-    <a data-url="http://niuhonggui.github.io/2019/12/14/Vue面试题及答案/" data-id="cjscwudv30008c0ue753ra3u2" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://niuhonggui.github.io/2018/12/14/Vue面试题及答案/" data-id="cjscxg8kd0003gcuewvbg3pbu" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -384,10 +384,19 @@
         
 <nav id="article-nav">
     
+        <a href="/2019/01/20/git/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">上一篇</strong>
+            <div class="article-nav-title">
+                
+                    git
+                
+            </div>
+        </a>
     
-        <a href="/2019/02/20/git/" id="article-nav-older" class="article-nav-link-wrap">
+    
+        <a href="/2018/11/27/Vue原理篇/" id="article-nav-older" class="article-nav-link-wrap">
             <strong class="article-nav-caption">下一篇</strong>
-            <div class="article-nav-title">git</div>
+            <div class="article-nav-title">Vue原理篇</div>
         </a>
     
 </nav>
@@ -414,7 +423,7 @@
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/12/14/Vue面试题及答案/" class="thumbnail">
+                            <a href="/2019/01/20/git/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -425,15 +434,15 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/12/14/Vue面试题及答案/" class="title">Vue面试题及答案</a></p>
-                            <p class="item-date"><time datetime="2019-12-14T07:29:09.000Z" itemprop="datePublished">2019-12-14</time></p>
+                            <p class="item-title"><a href="/2019/01/20/git/" class="title">git</a></p>
+                            <p class="item-date"><time datetime="2019-01-20T07:56:20.000Z" itemprop="datePublished">2019-01-20</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/02/20/git/" class="thumbnail">
+                            <a href="/2018/12/14/Vue面试题及答案/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -444,8 +453,8 @@
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/02/20/git/" class="title">git</a></p>
-                            <p class="item-date"><time datetime="2019-02-20T07:56:20.000Z" itemprop="datePublished">2019-02-20</time></p>
+                            <p class="item-title"><a href="/2018/12/14/Vue面试题及答案/" class="title">Vue面试题及答案</a></p>
+                            <p class="item-date"><time datetime="2018-12-14T07:29:09.000Z" itemprop="datePublished">2018-12-14</time></p>
                         </div>
                     </li>
                 
@@ -517,7 +526,7 @@
     <div class="widget-wrap">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/12/">十二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/02/">二月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/01/">一月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/11/">十一月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/10/">十月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/09/">九月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/07/">七月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/06/">六月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/05/">五月 2018</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/04/">四月 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
