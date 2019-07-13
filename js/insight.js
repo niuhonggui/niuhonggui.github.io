@@ -1,6 +1,6 @@
 /**
  * Insight search plugin
- * @author niuhonggui { @link https://github.com/niuhonggui }
+ * @author achengacheng { @link https://github.com/achengacheng }
  */
 (function ($, CONFIG) {
     var $main = $('.ins-search');
