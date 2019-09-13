@@ -5,18 +5,18 @@
     
     <title>hexo+github | BLOG</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="判断一个对象是不是数组类型，4种方法:">
+    <meta name="description" content="判断一个对象是不是数组类型，4种方法: typeof 不行！只能区分原始类型和function  判断原型对象:obj.proto==Array.prototype问题: proto是隐藏属性，个别浏览器禁用解决: 父对象.isPrototypeOf(子对象) 判断构造函数:obj.constructor==Array问题: constructor可能禁止使用解决: obj instanceof">
 <meta name="keywords" content="hexo,git,github">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hexo+github">
 <meta property="og:url" content="http://achengacheng.github.io/2019/09/13/180827/index.html">
 <meta property="og:site_name" content="BLOG">
-<meta property="og:description" content="判断一个对象是不是数组类型，4种方法:">
+<meta property="og:description" content="判断一个对象是不是数组类型，4种方法: typeof 不行！只能区分原始类型和function  判断原型对象:obj.proto==Array.prototype问题: proto是隐藏属性，个别浏览器禁用解决: 父对象.isPrototypeOf(子对象) 判断构造函数:obj.constructor==Array问题: constructor可能禁止使用解决: obj instanceof">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T13:27:24.933Z">
+<meta property="og:updated_time" content="2019-09-13T13:28:26.637Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github">
-<meta name="twitter:description" content="判断一个对象是不是数组类型，4种方法:">
+<meta name="twitter:description" content="判断一个对象是不是数组类型，4种方法: typeof 不行！只能区分原始类型和function  判断原型对象:obj.proto==Array.prototype问题: proto是隐藏属性，个别浏览器禁用解决: 父对象.isPrototypeOf(子对象) 判断构造函数:obj.constructor==Array问题: constructor可能禁止使用解决: obj instanceof">
     
 
     
@@ -255,7 +255,16 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="判断一个对象是不是数组类型，4种方法"><a href="#判断一个对象是不是数组类型，4种方法" class="headerlink" title="判断一个对象是不是数组类型，4种方法:"></a>判断一个对象是不是数组类型，4种方法:</h1>
+            <h1 id="判断一个对象是不是数组类型，4种方法"><a href="#判断一个对象是不是数组类型，4种方法" class="headerlink" title="判断一个对象是不是数组类型，4种方法:"></a>判断一个对象是不是数组类型，4种方法:</h1><p> typeof 不行！只能区分原始类型和function</p>
+<ol>
+<li>判断原型对象:<br>obj.<strong>proto</strong>==Array.prototype<br>问题: <strong>proto</strong>是隐藏属性，个别浏览器禁用<br>解决: 父对象.isPrototypeOf(子对象)</li>
+<li><p>判断构造函数:<br>obj.constructor==Array<br>问题: constructor可能禁止使用<br>解决: obj instanceof Array<br>问题: 不够严格:<br>1). <strong>proto</strong>和constructor不止检查直接父级，且检查整个原型链。<br>2). <strong>proto</strong>有可能被修改！</p>
+</li>
+<li><p>判断隐藏的class属性<br>class属性: 隐藏在每个对象内部，记录对象创建时的类型名。不随继承关系改变而改变。<br>问题: class属性是内部隐藏属性，不能用.直接访问！<br>解决: 只有顶级父类型Object.prototype中的toString()才可输出class属性值<br>问题: 内置类型的prototype中都重写了新的toString()覆盖了顶级的toString()<br>解决: 特殊的函数:  .call()<br>什么是: .call()可让任何一个对象，强行调用任何一个想调用的方法。<br>何时: 想强行调用本来无法调用到的方法<br>如何: 要调用的函数.call(对象)<br> 在执行时，相当于: 对象.要调用的函数()</p>
+</li>
+<li>ES5新API:<br>var bool=Array.isArray(obj)<br>强调: 其实采用的也是第三种方法</li>
+</ol>
+
         
         </div>
         <footer class="article-footer">
@@ -265,7 +274,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i5prz00002t0ty5gzb69hq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i5qrt80000koty8bblphfk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding

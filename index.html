@@ -255,7 +255,16 @@
         <div class="article-entry" itemprop="articleBody">
         
             
-            <h1 id="判断一个对象是不是数组类型，4种方法"><a href="#判断一个对象是不是数组类型，4种方法" class="headerlink" title="判断一个对象是不是数组类型，4种方法:"></a>判断一个对象是不是数组类型，4种方法:</h1>
+            <h1 id="判断一个对象是不是数组类型，4种方法"><a href="#判断一个对象是不是数组类型，4种方法" class="headerlink" title="判断一个对象是不是数组类型，4种方法:"></a>判断一个对象是不是数组类型，4种方法:</h1><p> typeof 不行！只能区分原始类型和function</p>
+<ol>
+<li>判断原型对象:<br>obj.<strong>proto</strong>==Array.prototype<br>问题: <strong>proto</strong>是隐藏属性，个别浏览器禁用<br>解决: 父对象.isPrototypeOf(子对象)</li>
+<li><p>判断构造函数:<br>obj.constructor==Array<br>问题: constructor可能禁止使用<br>解决: obj instanceof Array<br>问题: 不够严格:<br>1). <strong>proto</strong>和constructor不止检查直接父级，且检查整个原型链。<br>2). <strong>proto</strong>有可能被修改！</p>
+</li>
+<li><p>判断隐藏的class属性<br>class属性: 隐藏在每个对象内部，记录对象创建时的类型名。不随继承关系改变而改变。<br>问题: class属性是内部隐藏属性，不能用.直接访问！<br>解决: 只有顶级父类型Object.prototype中的toString()才可输出class属性值<br>问题: 内置类型的prototype中都重写了新的toString()覆盖了顶级的toString()<br>解决: 特殊的函数:  .call()<br>什么是: .call()可让任何一个对象，强行调用任何一个想调用的方法。<br>何时: 想强行调用本来无法调用到的方法<br>如何: 要调用的函数.call(对象)<br> 在执行时，相当于: 对象.要调用的函数()</p>
+</li>
+<li>ES5新API:<br>var bool=Array.isArray(obj)<br>强调: 其实采用的也是第三种方法</li>
+</ol>
+
         
         </div>
         <footer class="article-footer">
@@ -265,7 +274,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i5prz00002t0ty5gzb69hq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i5qrt80000koty8bblphfk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -395,7 +404,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/01/20/git/" data-id="ck0i5przg000dt0tyke27p0xc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/01/20/git/" data-id="ck0i5qrtn0007kotyi0z1enhq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -561,7 +570,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/12/14/Vue面试题及答案/" data-id="ck0i5ps0h001ot0ty5m0ugvop" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/12/14/Vue面试题及答案/" data-id="ck0i5qrvd001kkoty4hzvrb47" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -727,7 +736,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/11/27/Vue原理篇/" data-id="ck0i5pryv0000t0ty52lc9gsn" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/11/27/Vue原理篇/" data-id="ck0i5qrtg0002kotyffh6r42a" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -908,7 +917,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/11/07/jquery常用干货/" data-id="ck0i5przj000gt0tyr8mcbby0" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/11/07/jquery常用干货/" data-id="ck0i5qrtw000gkotyeu10ziez" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1033,7 +1042,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/10/02/设计模式/" data-id="ck0i5przm000kt0ty2t7spmg1" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/10/02/设计模式/" data-id="ck0i5qru2000okoty176q4qzb" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1169,7 +1178,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/09/27/falseData/" data-id="ck0i5przd0009t0ty6auetlvp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/09/27/falseData/" data-id="ck0i5qrtp0009koty7o9n7uci" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1299,7 +1308,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/08/11/原理图/" data-id="ck0i5przo000mt0tye1776whc" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/08/11/原理图/" data-id="ck0i5qrtz000jkotygy8wyw4z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1447,7 +1456,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/07/10/javascript设计模式object/" data-id="ck0i5przl000jt0tycbp1d0ei" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/07/10/javascript设计模式object/" data-id="ck0i5qrts000ckotyjxhrt4om" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1579,7 +1588,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/06/20/WebpackReact/" data-id="ck0i5prz80007t0tydr6srsu8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/06/20/WebpackReact/" data-id="ck0i5qrtl0005koty57exnvuw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
