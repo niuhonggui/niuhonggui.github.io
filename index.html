@@ -274,6 +274,8 @@
 <p>4、类，伪类和属性选择器，如： content、:hover 权重值为10</p>
 <p>5、标签选择器和伪元素选择器，如：div、p、:before 权重值为1</p>
 <p>6、通用选择器（*）、子选择器（&gt;）、相邻选择器（+）、同胞选择器（~）、权重值</p>
+<h1 id="内存泄漏"><a href="#内存泄漏" class="headerlink" title="内存泄漏"></a>内存泄漏</h1><p>1.意外的全局变量: 无法被回收<br>2.定时器: 未被正确关闭，导致所引用的外部变量无法被释放<br>3.事件监听: 没有正确销毁 (低版本浏览器可能出现)<br>4.闭包: 会导致父级中的变量无法被释放<br>5.dom 引用: dom 元素被删除时，内存中的引用未被正确清空<br>解决方案：可用 chrome 中的 timeline 进行内存标记，可视化查看内存的变化情况，找出异常点。</p>
+<h1 id="require与import的区别"><a href="#require与import的区别" class="headerlink" title="require与import的区别"></a>require与import的区别</h1><p>1.require支持 动态导入，import不支持，正在提案 (babel 下可支持)<br>2.require是 同步 导入，import属于 异步 导入<br>3.require是 值拷贝，导出值变化不会影响导入值；import指向 内存地址，导入值会随导出值而变化</p>
 
         
         </div>
@@ -284,7 +286,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i6dvj00001iotylq17ohjo" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i6i2jr0000g4ty9t4xboik" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -414,7 +416,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/01/20/git/" data-id="ck0i6dvje0006ioty5y2l04tp" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/01/20/git/" data-id="ck0i6i2k10005g4typw6z83ae" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -580,7 +582,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/12/14/Vue面试题及答案/" data-id="ck0i6dvkk001iiotyqaen1mn8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/12/14/Vue面试题及答案/" data-id="ck0i6i2ld001kg4tyt9ot2hjm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -746,7 +748,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/11/27/Vue原理篇/" data-id="ck0i6dvj40002iotysk75az2z" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/11/27/Vue原理篇/" data-id="ck0i6i2jx0002g4tyhr2c6ecm" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -927,7 +929,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/11/07/jquery常用干货/" data-id="ck0i6dvjl000giotyujqwwquv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/11/07/jquery常用干货/" data-id="ck0i6i2kf000hg4tywieo3rao" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1052,7 +1054,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/10/02/设计模式/" data-id="ck0i6dvjn000jioty1s9llxlz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/10/02/设计模式/" data-id="ck0i6i2ki000ng4tyxa0bc6yz" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1188,7 +1190,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/09/27/falseData/" data-id="ck0i6dvjh000aioty490sm3kv" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/09/27/falseData/" data-id="ck0i6i2k80009g4tyb4y6wj04" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1318,7 +1320,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/08/11/原理图/" data-id="ck0i6dvjk000eiotyr3j76zsw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/08/11/原理图/" data-id="ck0i6i2kh000lg4typfpe24x8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1466,7 +1468,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/07/10/javascript设计模式object/" data-id="ck0i6dvjj000ciotyvk9te5jw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/07/10/javascript设计模式object/" data-id="ck0i6i2ke000fg4typ7d23hb8" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
@@ -1598,7 +1600,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2018/06/20/WebpackReact/" data-id="ck0i6dvj70004iotypcsrksdg" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2018/06/20/WebpackReact/" data-id="ck0i6i2kd000dg4tyctr0shhi" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
