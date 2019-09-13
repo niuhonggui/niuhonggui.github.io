@@ -13,7 +13,7 @@
 <meta property="og:site_name" content="BLOG">
 <meta property="og:description" content="判断一个对象是不是数组类型，4种方法: typeof 不行！只能区分原始类型和function  判断原型对象:obj.proto==Array.prototype问题: proto是隐藏属性，个别浏览器禁用解决: 父对象.isPrototypeOf(子对象) 判断构造函数:obj.constructor==Array问题: constructor可能禁止使用解决: obj instanceof">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-09-13T13:28:26.637Z">
+<meta property="og:updated_time" content="2019-09-13T13:42:38.636Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo+github">
 <meta name="twitter:description" content="判断一个对象是不是数组类型，4种方法: typeof 不行！只能区分原始类型和function  判断原型对象:obj.proto==Array.prototype问题: proto是隐藏属性，个别浏览器禁用解决: 父对象.isPrototypeOf(子对象) 判断构造函数:obj.constructor==Array问题: constructor可能禁止使用解决: obj instanceof">
@@ -262,7 +262,12 @@
 </li>
 <li><p>判断隐藏的class属性<br>class属性: 隐藏在每个对象内部，记录对象创建时的类型名。不随继承关系改变而改变。<br>问题: class属性是内部隐藏属性，不能用.直接访问！<br>解决: 只有顶级父类型Object.prototype中的toString()才可输出class属性值<br>问题: 内置类型的prototype中都重写了新的toString()覆盖了顶级的toString()<br>解决: 特殊的函数:  .call()<br>什么是: .call()可让任何一个对象，强行调用任何一个想调用的方法。<br>何时: 想强行调用本来无法调用到的方法<br>如何: 要调用的函数.call(对象)<br> 在执行时，相当于: 对象.要调用的函数()</p>
 </li>
-<li>ES5新API:<br>var bool=Array.isArray(obj)<br>强调: 其实采用的也是第三种方法</li>
+<li>ES5新API:<br>var bool=Array.isArray(obj)<br>强调: 其实采用的也是第三种方法<h1 id="call-apply-bind"><a href="#call-apply-bind" class="headerlink" title="call/apply/bind"></a>call/apply/bind</h1>相同: 都可用于替换函数中不正确的this<br>区别:<br>1). call/apply:<br>什么是:调用一个函数，并临时替换其中的this为指定对象<br>何时: 在调用函数时，需要临时替换this为指定对象时<br>如何:<br>要调用的函数.call(对象,参数值,….)<ol>
+<li>调用函数</li>
+<li>替换函数中的this为指定”对象”</li>
+<li>传入参数<br>如果参数值列表是一个数组:<br>函数.apply(对象, 数组)<br>2). bind<br>什么是: 创建一个函数的副本，并永久替换其中的this为指定的对象<br>何时: 如果函数，暂时不调用，而是仅创建副本，并永久替换this时</li>
+</ol>
+</li>
 </ol>
 
         
@@ -274,7 +279,7 @@
 
 </div>
 
-    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i5qrt80000koty8bblphfk" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="http://achengacheng.github.io/2019/09/13/180827/" data-id="ck0i690e00001istyvsxbhojq" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         // Prevent duplicate binding
